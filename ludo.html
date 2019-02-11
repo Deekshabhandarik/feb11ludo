@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LUDO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <style>
+        .container {
+            width: 40%;
+            height: 500px;
+            margin: 5%;
+            border: 20px solid rgba(214, 106, 63, 0.849);
+            background-color: rgb(241, 195, 159);
+        }
+
+        .red {
+            background-color: red;
+            width: 130px;
+            height: 130px;
+            border-radius: 70px;
+            position: absolute;
+            top: 135px;
+            right: 1062px;
+
+        }
+
+        .blue {
+            background-color: blue;
+            width: 130px;
+            height: 130px;
+            border-radius: 70px;
+            position: absolute;
+            top: 392px;
+            right: 1067px;
+
+        }
+
+        .yellow {
+            background-color: yellow;
+            width: 130px;
+            height: 130px;
+            border-radius: 70px;
+            position: absolute;
+            top: 135px;
+            right: 789px;
+
+        }
+
+        .green {
+            background-color: green;
+            width: 130px;
+            height: 130px;
+            border-radius: 70px;
+            position: absolute;
+            top: 393px;
+            right: 780px;
+        }
+
+        .container .red .circle1 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 24px;
+            right: -77px;
+
+        }
+
+        .container .red .circle2 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 45px;
+            right: -75px;
+
+        }
+
+        .container .red .circle3 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: -36px;
+            right: -21px;
+
+        }
+
+        .container .red .circle4 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: -13px;
+            right: -24px;
+
+        }
+
+
+        .container .blue .wcircle1 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 26px;
+            right: -25px;
+        }
+
+        .container .blue .wcircle2 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 0px;
+            right: -77px;
+        }
+
+        .container .blue .wcircle3 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 15px;
+            right: -23px;
+        }
+
+        .container .blue .wcircle4 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: -13px;
+            right: -71px;
+        }
+
+        .container .yellow .tcircle1 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 23px;
+            right: -24px;
+        }
+
+        .container .yellow .tcircle2 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: -5px;
+            right: -77px;
+        }
+
+        .container .yellow .tcircle3 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 11px;
+            right: -23px;
+        }
+
+        .container .yellow .tcircle4 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: -16px;
+            right: -73px;
+        }
+
+        .container .green .fcircle1 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 28px;
+            right: -24px;
+        }
+
+        .container .green .fcircle2 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 2px;
+            right: -77px;
+        }
+
+        .container .green .fcircle3 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: 15px;
+            right: -23px;
+        }
+
+        .container .green .fcircle4 {
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            position: relative;
+            top: -12px;
+            right: -74px;
+        }
+
+        .cyl1 {
+            background-color: green;
+            width: 20px;
+            height: 100px;
+            border-radius: 30px;
+            position: relative;
+            top: 119px;
+            left: 256px;
+        }
+
+        .cyl2 {
+            background-color: red;
+            width: 100px;
+            height: 20px;
+            border-radius: 30px;
+            position: relative;
+            top: 126px;
+            left: 140px;
+        }
+
+        .cyl3 {
+            background-color: blue;
+            width: 20px;
+            height: 100px;
+            border-radius: 30px;
+            position: relative;
+            top: 131px;
+            left: 259px;
+        }
+
+        .cyl4 {
+            background-color: yellow;
+            width: 100px;
+            height: 20px;
+            border-radius: 30px;
+            position: relative;
+            top: 6px;
+            left: 292px;
+        }
+
+        .round1 {
+            background-color: rgb(235, 222, 222);
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+        }
+
+        .cube1 {
+            background-color: rgb(235, 222, 222);
+            width: 6px;
+            height: 18px;
+            margin: 7px;
+        }
+
+        .line1 {
+            position: absolute;
+            top: 132px;
+            right: 1020px;
+        }
+
+        .line2 {
+            position: absolute;
+            top: 336px;
+            right: 1020px;
+        }
+
+        .line3 {
+            position: absolute;
+            top: 337px;
+            right: 943px;
+        }
+
+        .line4 {
+            position: absolute;
+            top: 131px;
+            right: 945px;
+        }
+
+        .round11 {
+            background-color: rgb(235, 222, 222);
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+        }
+
+        .cube11 {
+            background-color: rgb(235, 222, 222);
+            width: 18px;
+            height: 6px;
+            margin: 7px;
+        }
+
+        .rowline1 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 287px;
+            right: 1020px;
+        }
+
+        .rowline2 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 337px;
+            right: 1020px;
+        }
+
+        .rowline3 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 287px;
+            right: 788px;
+        }
+
+        .rowline4 {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 337px;
+            right: 788px;
+        }
+        .side1{
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 132px;
+            right: 952px;
+        }
+        .side2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 281px;
+            right: 788px;
+        }
+        .side3{
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 492px;
+            right: 948px;
+        }
+        .side4{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 281px;
+            right: 1177px;
+        }
+        .topc{
+            background-color: rgb(235, 222, 222);
+            width: 6px;
+            height: 18px;
+            margin: 7px;
+        }
+        .topr{
+            background-color: rgb(235, 222, 222);
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+        }
+        .topcr{
+            background-color: rgb(235, 222, 222);
+            width: 18px;
+            height: 6px;
+            margin: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="red">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="cyl1"></div>
+        <div class="line1">
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+        </div>
+        <div class="rowline1">
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+        </div>
+        <div class="side1">
+            <div class="topcr"></div>
+            <div class="topr"></div>
+            <div class="topcr"></div>
+        </div>
+        <div class="blue">
+            <div class="wcircle1"></div>
+            <div class="wcircle2"></div>
+            <div class="wcircle3"></div>
+            <div class="wcircle4"></div>
+        </div>
+        <div class="cyl2"></div>
+        <div class="line2">
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+        </div>
+        <div class="rowline2">
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+        </div>
+        <div class="side2">
+                <div class="topc"></div>
+                <div class="topr"></div>
+                <div class="topc"></div>
+            </div>
+        <div class="yellow">
+            <div class="tcircle1"></div>
+            <div class="tcircle2"></div>
+            <div class="tcircle3"></div>
+            <div class="tcircle4"></div>
+        </div>
+        <div class="cyl3"></div>
+        <div class="line3">
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+        </div>
+        <div class="rowline3">
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+        </div>
+        <div class="side3">
+                <div class="topcr"></div>
+                <div class="topr"></div>
+                <div class="topcr"></div>
+            </div>
+        <div class="green">
+            <div class="fcircle1"></div>
+            <div class="fcircle2"></div>
+            <div class="fcircle3"></div>
+            <div class="fcircle4"></div>
+        </div>
+        <div class="cyl4"></div>
+        <div class="line4">
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+            <div class="cube1"></div>
+            <div class="round1"></div>
+        </div>
+        <div class="rowline4">
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+            <div class="cube11"></div>
+            <div class="round11"></div>
+        </div>
+        <div class="side4">
+                <div class="topc"></div>
+                <div class="topr"></div>
+                <div class="topc"></div>
+            </div>
+
+    </div>
+</body>
+
+</html>
